@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailsDoll1994</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+
+    <body>
+        <!-- SVG Icons -->
+        <svg width="40px" height="40px" style="display: none;" viewBox="0 0 24 24" fill="none">
+            <symbol id="icon-arrow" viewBox="0 0 24 24">
+                <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.3891 8.11096L16.7426 12" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.3891 8.11096L12.5 7.75741" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+        </svg>
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Main Content -->
+        <main class="profile-container">
+            <!-- Background Image -->
+            <div class="background-photo">
+                <img class="background-img mask-gradient" src="src/background/Level.png" alt="Background image">
+            </div>
+
+            <!-- Avatar Section -->
+            <div class="avatar-margin">
+                <div class="avatar-container">
+                    <img src="src/avatar/Avi.jpg" class="avatar-img" alt="Profile avatar">
+                </div>
+            </div>
+
+            <!-- Nickname -->
+            <div>
+                <h1 class="nick">TailsDoll1994</h1>
+            </div>
+
+            
+            <!-- Bio Section -->
+            <section id="bio" class="section-card">
+                <h2 class="section-title" data-en="Bio" data-ru="Биография">Bio</h2>
+                <p class="text-content" data-en="Here is a brief overview of my background and experience." data-ru="Здесь находится краткий обзор моего опыта и профессиональных навыков.">Here is a brief overview of my background and experience.</p>
+            </section>
+
+            <!-- Resume Section -->
+            <section id="resume" class="section-card">
+                <h2 class="section-title" data-en="Resume" data-ru="Резюме">Resume</h2>
+
+                <div class="work-experience">
+                    <!-- Azur Games Experience -->
+                    <div class="resume-item">
+                        <h3 class="subsection-title">
+                            <span class="job-title" data-en="Level Designer [Azur Games]" data-ru="Дизайнер уровней [Azur Games]">Level Designer [Azur Games]</span>
+                            <span class="job-period" data-en="April 2024 - November 2025 [1 year 8 months]" data-ru="апрель 2024 - ноябрь 2025 [1 год 8 месяцев]">April 2024 - November 2025 [1 year 8 months]</span>
+                            <span class="job2-period" data-en="Full-time | Remote" data-ru="Полный рабочий день | Удаленная работа">Full-time | Remote</span>
+                        </h3>
+                        <p class="text-content"><span data-en="Project" data-ru="Проект">Project</span>: <a href="https://play.google.com/store/apps/details?id=swat.shooter.fps" target="_blank" rel="noopener">SWAT Shooter Police Action FPS</a></p>
+                        <p class="text-content"><span data-en="Responsibilities" data-ru="Обязанности">Responsibilities</span>:</p>
+                        <ul>
+                            <li data-en="Full cycle level creation (from prototyping to finalization)" data-ru="Полный цикл создания уровня (от прототипирования до финализации)">Full cycle level creation (from prototyping to finalization)</li>
+                            <li data-en="Prototyping game mechanics" data-ru="Прототипирование игровых механик">Prototyping game mechanics</li>
+                            <li data-en="Baking and lighting setup" data-ru="Запекание и настройка освещения">Baking and lighting setup</li>
+                            <li data-en="Asset integration into the game engine" data-ru="Интеграция ассетов в игровой движок">Asset integration into the game engine</li>
+                            <li data-en="Support for previously created levels" data-ru="Поддержка ранее созданных уровней">Support for previously created levels</li>
+                            <li data-en="Balancing TTK and enemies" data-ru="Баланс TTK и врагов">Balancing TTK and enemies</li>
+                            <li data-en="Writing pipeline documentation for level assembly" data-ru="Написание pipeline-документации по сборке уровня">Writing pipeline documentation for level assembly</li>
+                            <li data-en="Documentation for tools, levels, assets, and metrics" data-ru="Документация для инструментария, уровней, ассетов и метрик">Documentation for tools, levels, assets, and metrics</li>
+                            <li data-en="Creating specifications for ART and DEV departments" data-ru="Формирование ТЗ для ART и DEV отделов">Creating specifications for ART and DEV departments</li>
+                            <li data-en="Level optimization for mobile devices" data-ru="Оптимизация уровней под мобильные устройства">Level optimization for mobile devices</li>
+                            <li data-en="Level rework based on feedback" data-ru="Переработка уровней на основе фидбека">Level rework based on feedback</li>
+                        </ul>
+                        <p class="text-content"><span data-en="Skills" data-ru="Навыки">Skills</span>: Level Design, Unity, C#, Git, Miro, Notion</p>
+                        <h3 class="subsection-title"></h3>
+                    </div>
+
+                    <!-- Freelance Experience -->
+                    <div class="resume-item">
+                        <h3 class="subsection-title">
+                            <span class="job-title" data-en="Level Designer [Freelance]" data-ru="Дизайнер уровней [Freelance]">Level Designer [Freelance]</span>
+                            <span class="job-period" data-en="February 2022 - March 2024 [2 years 2 months]" data-ru="февраль 2022 - март 2024 [2 года 2 месяца]">February 2022 - March 2024 [2 years 2 months]</span>
+                            <span class="job2-period" data-en="Part-time | Remote" data-ru="Частичная занятость | Удаленная работа">Part-time | Remote</span>
+                        </h3>
+                        <p class="text-content"><span data-en="Responsibilities" data-ru="Обязанности">Responsibilities</span>:</p>
+                        <ul>
+                            <li data-en="Designing and assembling locations in the editor" data-ru="Проектирование и сборка локаций в редакторе">Designing and assembling locations in the editor</li>
+                            <li data-en="Forming the graphic style" data-ru="Формирование графического стиля">Forming the graphic style</li>
+                            <li data-en="Defining player, NPC, and level metrics" data-ru="Определение метрик игрока, NPC и уровня">Defining player, NPC, and level metrics</li>
+                            <li data-en="Writing documentation for tools and level design" data-ru="Написание документации по инструментам и дизайну уровней">Writing documentation for tools and level design</li>
+                            <li data-en="Creating specifications for art and its integration" data-ru="Создание ТЗ для арта и его интеграция">Creating specifications for art and its integration</li>
+                            <li data-en="Forming criteria and requirements for level design" data-ru="Формирование критериев и требований к дизайну уровней">Forming criteria and requirements for level design</li>
+                            <li data-en="Setting up lighting, composition, and artistic elements" data-ru="Настройка освещения, композиции и художественных элементов">Setting up lighting, composition, and artistic elements</li>
+                            <li data-en="Working with Git and Plastic SCM" data-ru="Работа с Git и Plastic SCM">Working with Git and Plastic SCM</li>
+                        </ul>
+                        <p class="text-content"><span data-en="Skills" data-ru="Навыки">Skills</span>: C#, Unreal, Git, Unity, Level Design</p>
+                    </div>
+                </div>
+            </section>
+            <section id="links" class="section-card">
+                <h2 class="section-title" data-en="Links" data-ru="Ссылки">Links</h2>
+                <div class="links-grid">
+                    <a class="link-card" href="https://t.me/Tailsdoll1994" target="_blank" rel="noopener">
+                        <img src="src/icons/icon-telegram.png" alt="Telegram icon">
+                        <span class="link-text" data-en="Telegram" data-ru="Telegram">Telegram</span>
+                    </a>
+                    <a class="link-card" href="https://steamcommunity.com/id/tailsdoll1994/" target="_blank" rel="noopener">
+                        <img src="src/icons/icon-steam.png" alt="Steam icon">
+                        <span class="link-text" data-en="Steam" data-ru="Steam">Steam</span>
+                    </a>
+                    <a class="link-card" href="https://www.linkedin.com/in/martynov-v/" target="_blank" rel="noopener">
+                        <img src="src/icons/icon-linkedin.png" alt="LinkedIn icon">
+                        <span class="link-text" data-en="LinkedIn" data-ru="LinkedIn">LinkedIn</span>
+                    </a>
+                    <a class="link-card" href="https://www.artstation.com/martynov_v" target="_blank" rel="noopener">
+                        <img src="src/icons/icon-artstation.png" alt="Artstation icon">
+                        <span class="link-text" data-en="Artstation" data-ru="Artstation">Artstation</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ArtStation Section -->
+            <section id="artstation" class="section-card">
+                <h2 class="section-title" data-en="ArtStation Works" data-ru="Работы на ArtStation">ArtStation Works</h2>
+                <div class="artstation-grid" id="artstationGrid">
+                    <div class="loading" data-en="Loading..." data-ru="Загрузка...">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Gaming Section -->
+            <section id="gaming" class="section-card">
+                <h2 class="section-title" data-en="Gaming" data-ru="Игры">Gaming</h2>
+                <div class="gaming-stats">
+                    <div class="stat-item">
+                        <span data-en="Games Owned" data-ru="Игр в библиотеке">Games Owned</span>
+                        <span>394</span>
+                    </div>
+                    <div class="stat-item">
+                        <span data-en="DLC" data-ru="DLC">DLC</span>
+                        <span>453</span>
+                    </div>
+                    <div class="stat-item">
+                        <span data-en="Reviews" data-ru="Обзоров">Reviews</span>
+                        <span>15</span>
+                    </div>
+                    <div class="stat-item">
+                        <span data-en="Wishlist" data-ru="Список желаемого">Wishlist</span>
+                        <span>231</span>
+                    </div>
+                </div>
+                <div class="gaming-featured">
+                    <h3 class="subsection-title" data-en="Favorite Games" data-ru="Любимые игры">Favorite Games</h3>
+                    <div class="games-grid">
+                        <a class="game-card" href="https://steamcommunity.com/app/4000" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/2e52d9b905feebfdaaf2db6ad7afece10991d504/capsule_184x69.jpg?t=1776868682" alt="Garry's Mod">
+                            <div class="game-info">
+                                <p class="game-title">Garry's Mod</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/1817230" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/capsule_184x69.jpg?t=1764916407" alt="Hi-Fi RUSH">
+                            <div class="game-info">
+                                <p class="game-title">Hi-Fi RUSH</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/362890" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/362890/626cc060e15a64a2a268b597b9556772ad5ce486/capsule_184x69.jpg?t=1747193649" alt="Black Mesa">
+                            <div class="game-info">
+                                <p class="game-title">Black Mesa</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/524220" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/capsule_184x69.jpg?t=1773364834" alt="NieR:Automata™">
+                            <div class="game-info">
+                                <p class="game-title">NieR:Automata™</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/233610" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233610/capsule_184x69.jpg?t=1688091852" alt="Distance">
+                            <div class="game-info">
+                                <p class="game-title">Distance</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/15370" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15370/capsule_184x69.jpg?t=1692823670" alt="Heroes of Might & Magic V: Tribes of the East">
+                            <div class="game-info">
+                                <p class="game-title">Heroes of Might & Magic V: Tribes of the East</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/1237970" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1237970/capsule_184x69.jpg?t=1777412058" alt="Titanfall® 2">
+                            <div class="game-info">
+                                <p class="game-title">Titanfall® 2</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/514900" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/514900/1d3a6130c422ff499c786403d46443a8e43bd3f2/capsule_184x69.jpg?t=1773839940" alt=">observer_">
+                            <div class="game-info">
+                                <p class="game-title">&gt;observer_</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/570940" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570940/capsule_184x69.jpg?t=1764975651" alt="DARK SOULS™: REMASTERED">
+                            <div class="game-info">
+                                <p class="game-title">DARK SOULS: REMASTERED</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/374320" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/capsule_184x69.jpg?t=1748630784" alt="DARK SOULS™ III">
+                            <div class="game-info">
+                                <p class="game-title">DARK SOULS™ III</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/1091500" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/590e0988a2fb79f44d3e31e41fd4949eb76abc41/capsule_184x69.jpg?t=1769690377" alt="Cyberpunk 2077">
+                            <div class="game-info">
+                                <p class="game-title">Cyberpunk 2077</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/303210" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/303210/capsule_184x69.jpg?t=1765833998" alt="The Beginner's Guide">
+                            <div class="game-info">
+                                <p class="game-title">The Beginner's Guide</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/420530" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/420530/capsule_184x69.jpg?t=1747673318" alt="OneShot">
+                            <div class="game-info">
+                                <p class="game-title">OneShot</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/391540" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/capsule_184x69.jpg?t=1757349115" alt="Undertale">
+                            <div class="game-info">
+                                <p class="game-title">Undertale</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/447530" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/447530/capsule_184x69.jpg?t=1730740610" alt="VA-11 Hall-A: Cyberpunk Bartender Action">
+                            <div class="game-info">
+                                <p class="game-title">VA-11 Hall-A: Cyberpunk Bartender Action</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/493200" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493200/capsule_184x69.jpg?t=1667232008" alt="RiME">
+                            <div class="game-info">
+                                <p class="game-title">RiME</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/427520" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/capsule_184x69.jpg?t=1763986204" alt="Factorio">
+                            <div class="game-info">
+                                <p class="game-title">Factorio</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/413150" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865" alt="Stardew Valley">
+                            <div class="game-info">
+                                <p class="game-title">Stardew Valley</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/105600" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435" alt="Terraria">
+                            <div class="game-info">
+                                <p class="game-title">Terraria</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/1167630" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1167630/592fd402f333d5022f47691dbe49d26c9bae0c6c/capsule_184x69.jpg?t=1776678144" alt="Teardown">
+                            <div class="game-info">
+                                <p class="game-title">Teardown</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/1049410" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049410/capsule_184x69.jpg?t=1755294276" alt="Superliminal">
+                            <div class="game-info">
+                                <p class="game-title">Superliminal</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/620" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/capsule_184x69.jpg?t=1745363004" alt="Portal 2">
+                            <div class="game-info">
+                                <p class="game-title">Portal 2</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/219890" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219890/capsule_184x69.jpg?t=1525832559" alt="Antichamber">
+                            <div class="game-info">
+                                <p class="game-title">Antichamber</p>
+                            </div>
+                        </a>
+                        <a class="game-card" href="https://steamcommunity.com/app/813230" target="_blank" rel="noopener">
+                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813230/capsule_184x69.jpg?t=1776365443" alt="ANIMAL WELL">
+                            <div class="game-info">
+                                <p class="game-title">ANIMAL WELL</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 80 },
+                    color: { value: "#ffffff" },
+                    line_linked: {
+                        enable: true,
+                        distance: 110,
+                        color: "#ffffff",
+                        opacity: 0.4
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2.5
+                    },
+                    size: {
+                        value: 0
+                    }
+                },
+                interactivity: {
+                    detect_on: "window",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" }
+                    }
+                }
+            });
+
+            function openModal(id) {
+                document.getElementById(id).showModal();
+            }
+
+            function closeModal(id) {
+                document.getElementById(id).close();
+            }
+
+        </script>
+
+        <!-- Кнопка переключения языка -->
+        <button id="lang-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: #fff; color: #000; border: 1px solid #000; padding: 5px 10px;">RU</button>
+
+        <script>
+            // Language toggle
+            let currentLang = 'en';
+            document.getElementById('lang-toggle').innerText = 'EN';
+            
+            document.getElementById('lang-toggle').addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ru' : 'en';
+                document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
+                    el.innerText = el.getAttribute('data-' + currentLang);
+                });
+                document.getElementById('lang-toggle').innerText = currentLang === 'en' ? 'EN' : 'RU';
+            });
+        </script>
+
+        <!-- ArtStation Works Loader -->
+        <script>
+            // Fetch and display ArtStation works
+            async function loadArtstationWorks() {
+                const username = 'martynov_v';
+                const gridContainer = document.getElementById('artstationGrid');
+                
+                try {
+                    // Try direct API call first
+                    const response = await fetch(`https://www.artstation.com/users/${username}/projects.json`, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (!data || data.length === 0) {
+                        gridContainer.innerHTML = '<div class="loading" data-en="No works found" data-ru="Работ не найдено">No works found</div>';
+                        return;
+                    }
+                    
+                    gridContainer.innerHTML = '';
+                    
+                    // Limit to first 12 works
+                    data.slice(0, 12).forEach(project => {
+                        const card = document.createElement('a');
+                        card.className = 'artstation-card';
+                        card.href = `https://www.artstation.com/artwork/${project.hash_id}`;
+                        card.target = '_blank';
+                        card.rel = 'noopener';
+                        
+                        const imageUrl = project.cover?.medium_url || project.cover?.thumb_url || '';
+                        
+                        card.innerHTML = `
+                            ${imageUrl ? `<img src="${imageUrl}" alt="${project.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%23333%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'">` : ''}
+                            <div class="artstation-info">
+                                <p class="artstation-title">${project.title || 'Untitled'}</p>
+                            </div>
+                        `;
+                        
+                        gridContainer.appendChild(card);
+                    });
+                    
+                } catch (error) {
+                    console.log('Loading ArtStation works. Error:', error);
+                    
+                    // Fallback: Load via CORS proxy if direct call fails
+                    try {
+                        const proxyUrl = `https://cors-anywhere.herokuapp.com/https://www.artstation.com/users/${username}/projects.json`;
+                        const response = await fetch(proxyUrl, {
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            const data = await response.json();
+                            gridContainer.innerHTML = '';
+                            
+                            data.slice(0, 12).forEach(project => {
+                                const card = document.createElement('a');
+                                card.className = 'artstation-card';
+                                card.href = `https://www.artstation.com/artwork/${project.hash_id}`;
+                                card.target = '_blank';
+                                card.rel = 'noopener';
+                                
+                                const imageUrl = project.cover?.medium_url || project.cover?.thumb_url || '';
+                                
+                                card.innerHTML = `
+                                    ${imageUrl ? `<img src="${imageUrl}" alt="${project.title}">` : ''}
+                                    <div class="artstation-info">
+                                        <p class="artstation-title">${project.title || 'Untitled'}</p>
+                                    </div>
+                                `;
+                                
+                                gridContainer.appendChild(card);
+                            });
+                        }
+                    } catch (fallbackError) {
+                        console.log('CORS proxy also failed:', fallbackError);
+                        gridContainer.innerHTML = '<div class="loading" data-en="Could not load works. Please visit ArtStation directly." data-ru="Не удалось загрузить работы. Посетите ArtStation напрямую.">Could not load works. Please visit ArtStation directly.</div>';
+                    }
+                }
+            }
+            
+            // Load works when page loads
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadArtstationWorks);
+            } else {
+                loadArtstationWorks();
+            }
+        </script>
+    </body>
+</html>
