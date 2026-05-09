@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TailsDoll1994</title>
+    <title>Vladimir Martynov</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
@@ -38,7 +38,7 @@
 
             <!-- Nickname -->
             <div>
-                <h1 class="nick">TailsDoll1994</h1>
+                <h1 class="nick">Vladimir Martynov</h1>
             </div>
 
             
@@ -101,6 +101,15 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ArtStation Section -->
+            <section id="artstation" class="section-card">
+                <h2 class="section-title" data-en="ArtStation Works" data-ru="Работы на ArtStation">ArtStation Works</h2>
+                <div class="artstation-grid" id="artstationGrid">
+                    <div class="loading" data-en="Loading..." data-ru="Загрузка...">Loading...</div>
+                </div>
+            </section>
+
             <section id="links" class="section-card">
                 <h2 class="section-title" data-en="Links" data-ru="Ссылки">Links</h2>
                 <div class="links-grid">
@@ -120,14 +129,6 @@
                         <img src="src/icons/icon-artstation.png" alt="Artstation icon">
                         <span class="link-text" data-en="Artstation" data-ru="Artstation">Artstation</span>
                     </a>
-                </div>
-            </section>
-
-            <!-- ArtStation Section -->
-            <section id="artstation" class="section-card">
-                <h2 class="section-title" data-en="ArtStation Works" data-ru="Работы на ArtStation">ArtStation Works</h2>
-                <div class="artstation-grid" id="artstationGrid">
-                    <div class="loading" data-en="Loading..." data-ru="Загрузка...">Loading...</div>
                 </div>
             </section>
 
@@ -359,100 +360,143 @@
 
         <!-- ArtStation Works Loader -->
         <script>
-            // Fetch and display ArtStation works
+            //  Удаления авторства ("by Автор")
+            function cleanTitle(title) {
+                if (!title) return '';
+                const byIndex = title.toLowerCase().indexOf(' by ');
+                if (byIndex !== -1) {
+                    return title.substring(0, byIndex);
+                }
+                return title;
+            }
+
+            // ========== НАСТРОЙКА: список нужных работ ==========
+            const customWorks = [
+                // Пример (название должно точно совпадать с тем, что в RSS-ленте, включая "by ...")
+                // {
+                //     title: "Dragon Knight by Johnny Joestar",
+                //     imageUrl: "https://.../картинка.jpg",
+                //     link: "https://www.artstation.com/artwork/..."
+                // },
+
+                {
+                    title: "Asymmetric Multiplayer Level by Vladimir Martynov",
+                    imageUrl: "https://cdnb.artstation.com/p/assets/images/images/065/527/425/large/vladimir-martynov-testtask-teamdeathmatch-4k-27-07-2023-19-44-08.jpg?1690573974",
+                },
+                {
+                    title: "Swamp Sawmill (MudRunner Level Design) by Vladimir Martynov"
+                },
+                {
+                    title: "Sonic Blockout (Level Design) by Vladimir Martynov"
+                },
+                {
+                    title: "Escape (Level Design) by Vladimir Martynov"
+                }
+            ];
+
             async function loadArtstationWorks() {
                 const username = 'martynov_v';
                 const gridContainer = document.getElementById('artstationGrid');
-                
-                try {
-                    // Try direct API call first
-                    const response = await fetch(`https://www.artstation.com/users/${username}/projects.json`, {
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
+
+                if (!customWorks || customWorks.length === 0) {
+                    try {
+                        const rssUrl = `https://www.artstation.com/${username}.rss`;
+                        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+                        const response = await fetch(apiUrl);
+                        const data = await response.json();
+                        gridContainer.innerHTML = '';
+                        data.items.slice(0, 12).forEach(item => {
+                            const imageUrl = item.thumbnail || '';
+                            const card = document.createElement('a');
+                            card.className = 'artstation-card';
+                            card.href = item.link;
+                            card.target = '_blank';
+                            card.innerHTML = `
+                                <div class="artstation-image">
+                                    ${imageUrl ? `<img src="${imageUrl}" alt="${item.title}">` : ''}
+                                </div>
+                                <div class="artstation-info">
+                                    <p class="artstation-title">${cleanTitle(item.title)}</p>
+                                </div>
+                            `;
+                            gridContainer.appendChild(card);
+                        });
+                    } catch (error) {
+                        console.error(error);
+                        gridContainer.innerHTML = '<div class="loading">Ошибка загрузки</div>';
                     }
-                    
+                    return;
+                }
+
+                try {
+                    const rssUrl = `https://www.artstation.com/${username}.rss`;
+                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+                    const response = await fetch(apiUrl);
                     const data = await response.json();
-                    
-                    if (!data || data.length === 0) {
-                        gridContainer.innerHTML = '<div class="loading" data-en="No works found" data-ru="Работ не найдено">No works found</div>';
+
+                    const itemsMap = new Map();
+                    data.items.forEach(item => {
+                        itemsMap.set(item.title, item);
+                    });
+
+                    const cardsToRender = [];
+
+                    for (const custom of customWorks) {
+                        const foundItem = itemsMap.get(custom.title);
+                        if (foundItem) {
+                            const imageUrl = custom.imageUrl && custom.imageUrl.trim() !== '' 
+                                ? custom.imageUrl 
+                                : (foundItem.thumbnail || '');
+                            cardsToRender.push({
+                                title: foundItem.title,     // полный заголовок с "by ..."
+                                imageUrl: imageUrl,
+                                link: foundItem.link,
+                            });
+                        } else {
+                            if (custom.title && custom.imageUrl) {
+                                cardsToRender.push({
+                                    title: custom.title,
+                                    imageUrl: custom.imageUrl,
+                                    link: custom.link || '#',
+                                });
+                            } else {
+                                console.warn(`Пропущена работа "${custom.title}"`);
+                            }
+                        }
+                    }
+
+                    gridContainer.innerHTML = '';
+                    if (cardsToRender.length === 0) {
+                        gridContainer.innerHTML = '<div class="loading">Нет работ для отображения</div>';
                         return;
                     }
-                    
-                    gridContainer.innerHTML = '';
-                    
-                    // Limit to first 12 works
-                    data.slice(0, 12).forEach(project => {
+
+                    cardsToRender.forEach(work => {
                         const card = document.createElement('a');
                         card.className = 'artstation-card';
-                        card.href = `https://www.artstation.com/artwork/${project.hash_id}`;
+                        card.href = work.link;
                         card.target = '_blank';
-                        card.rel = 'noopener';
-                        
-                        const imageUrl = project.cover?.medium_url || project.cover?.thumb_url || '';
-                        
+                        if (work.link === '#') {
+                            card.href = 'javascript:void(0)';
+                            card.style.cursor = 'default';
+                        }
                         card.innerHTML = `
-                            ${imageUrl ? `<img src="${imageUrl}" alt="${project.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%23333%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'">` : ''}
+                            <div class="artstation-image">
+                                ${work.imageUrl ? `<img src="${work.imageUrl}" alt="${work.title}">` : '<div style="background:#333; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Нет изображения</div>'}
+                            </div>
                             <div class="artstation-info">
-                                <p class="artstation-title">${project.title || 'Untitled'}</p>
+                                <p class="artstation-title">${cleanTitle(work.title)}</p>
                             </div>
                         `;
-                        
                         gridContainer.appendChild(card);
                     });
-                    
+
                 } catch (error) {
-                    console.log('Loading ArtStation works. Error:', error);
-                    
-                    // Fallback: Load via CORS proxy if direct call fails
-                    try {
-                        const proxyUrl = `https://cors-anywhere.herokuapp.com/https://www.artstation.com/users/${username}/projects.json`;
-                        const response = await fetch(proxyUrl, {
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-                        
-                        if (response.ok) {
-                            const data = await response.json();
-                            gridContainer.innerHTML = '';
-                            
-                            data.slice(0, 12).forEach(project => {
-                                const card = document.createElement('a');
-                                card.className = 'artstation-card';
-                                card.href = `https://www.artstation.com/artwork/${project.hash_id}`;
-                                card.target = '_blank';
-                                card.rel = 'noopener';
-                                
-                                const imageUrl = project.cover?.medium_url || project.cover?.thumb_url || '';
-                                
-                                card.innerHTML = `
-                                    ${imageUrl ? `<img src="${imageUrl}" alt="${project.title}">` : ''}
-                                    <div class="artstation-info">
-                                        <p class="artstation-title">${project.title || 'Untitled'}</p>
-                                    </div>
-                                `;
-                                
-                                gridContainer.appendChild(card);
-                            });
-                        }
-                    } catch (fallbackError) {
-                        console.log('CORS proxy also failed:', fallbackError);
-                        gridContainer.innerHTML = '<div class="loading" data-en="Could not load works. Please visit ArtStation directly." data-ru="Не удалось загрузить работы. Посетите ArtStation напрямую.">Could not load works. Please visit ArtStation directly.</div>';
-                    }
+                    console.error('Ошибка загрузки ArtStation:', error);
+                    gridContainer.innerHTML = '<div class="loading">Ошибка загрузки работ</div>';
                 }
             }
-            
-            // Load works when page loads
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadArtstationWorks);
-            } else {
-                loadArtstationWorks();
-            }
+            loadArtstationWorks();
         </script>
     </body>
 </html>
