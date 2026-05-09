@@ -245,15 +245,15 @@ img.adaptive-image {
     margin: -100px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     overflow: hidden;
     border-radius: 50%;
 }
 
 .avatar-img {
     max-width: 100%;
-    object-fit: contain;
-    margin-top: 85px;
+    object-fit: stretch;
+    margin-top: 0px;
 }
 
 /* ###################################################
