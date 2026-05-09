@@ -512,21 +512,44 @@ h4.subsection-title {
 
 .stat-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    flex-direction: column;      /* Текст и число друг под другом */
+    align-items: center;         /* Горизонтальное центрирование */
+    justify-content: center;     /* Вертикальное центрирование */
+    gap: 8px;
+    min-width: 160px;
+    max-width: 220px;
+    flex: 0 1 auto;
+    padding: 12px 75px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.08);
-    color: #4a86e8ff;
+    color: rgb(255, 255, 255);
     font-size: 0.95rem;
-    transition: color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stat-item span:first-child {
+    font-weight: 500;
+}
+
+.stat-item span:last-child {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    color: #80aaee;
 }
 
 .gaming-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     padding: 10px 20px 0;
+    flex-wrap: wrap;
 }
 
 .gaming-featured {
