@@ -1,10 +1,9 @@
-Почти всё было написано с помощью GitHub Copilot и локальной [LLM](https://huggingface.co/Jackrong/Qwopus-GLM-18B-Merged-GGUF) [Q4_K_M 9.84GB + Ollama] — это эксперимент по быстрому созданию одностраничного сайта с минимальным количеством графики.
-
-> Переключение языка в этом файле реализовано через якоря: выберите нужную версию ниже.
->
 > [Русский](#русский) · [English](#english)
 
+
 ## Русский
+
+Почти всё было написано с помощью GitHub Copilot и локальной [LLM](https://huggingface.co/Jackrong/Qwopus-GLM-18B-Merged-GGUF) [Q4_K_M 9.84GB + Ollama] — это эксперимент по быстрому созданию одностраничного сайта с минимальным количеством графики.
 
 ## О проекте
 
@@ -82,6 +81,8 @@
 ---
 
 ## English
+
+Almost everything was written using GitHub Copilot and a local LLM [Q4_K_M 9.84GB + Ollama] — this is an experiment in rapidly creating a single-page website with minimal graphics.
 
 ## Project Overview
 
