@@ -141,40 +141,48 @@
             <!-- Skills Section -->
             <section id="skills" class="section-card">
                 <h2 class="section-title" data-en="Skills" data-ru="Навыки">Skills</h2>
-                <div class="skills-layout">
-                    <div class="skills-specializations">
-                        <h3 class="skills-column-title" data-en="Specializations" data-ru="Специализации">Specializations</h3>
-                        <div class="skills-list skills-list-wide">
-                            <span>Level Design</span>
-                            <span>Visual Scripting</span>
-                            <span>PvP & PvE Maps</span>
-                            <span>Quest Design</span>
-                            <span>World Design</span>
-                            <span>Encounter Design</span>
-                        </div>
-                    </div>
-                    <div class="skills-columns">
-                        <div class="skills-column">
-                            <h3 class="skills-column-title" data-en="Productivity" data-ru="Продуктивность">Productivity</h3>
-                            <div class="skills-list">
-                                <span>Figma</span>
-                                <span>Miro</span>
-                                <span>Notion</span>
+                <div class="skills-content">
+                    <div class="skills-layout">
+                        <div class="skills-category skills-category-specializations">
+                            <h3 class="skills-column-title" data-en="Specializations" data-ru="Специализации">Specializations</h3>
+                            <div class="skills-list skills-list-wide">
+                                <span>Level Design</span>
+                                <span>Visual Scripting</span>
+                                <span>PvP & PvE Maps</span>
+                                <span>Quest Design</span>
+                                <span>World Design</span>
+                                <span>Encounter Design</span>
                             </div>
                         </div>
-                        <div class="skills-column">
-                            <h3 class="skills-column-title" data-en="Programming" data-ru="Программирование">Programming</h3>
-                            <div class="skills-list">
-                                <span>Git</span>
-                                <span>C#</span>
+                        <div class="skills-columns">
+                            <div class="skills-column">
+                                <div class="skills-category">
+                                    <h3 class="skills-column-title" data-en="Productivity" data-ru="Продуктивность">Productivity</h3>
+                                    <div class="skills-list">
+                                        <span>Figma</span>
+                                        <span>Miro</span>
+                                        <span>Notion</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skills-column">
-                            <h3 class="skills-column-title" data-en="3D & Engines" data-ru="3D & движки">3D & Engines</h3>
-                            <div class="skills-list">
-                                <span>Blender</span>
-                                <span>Unity</span>
-                                <span>Unreal</span>
+                            <div class="skills-column">
+                                <div class="skills-category">
+                                    <h3 class="skills-column-title" data-en="Programming" data-ru="Программирование">Programming</h3>
+                                    <div class="skills-list">
+                                        <span>Git</span>
+                                        <span>C#</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-column">
+                                <div class="skills-category">
+                                    <h3 class="skills-column-title" data-en="3D & Engines" data-ru="3D & движки">3D & Engines</h3>
+                                    <div class="skills-list">
+                                        <span>Blender</span>
+                                        <span>Unity</span>
+                                        <span>Unreal</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,6 +195,87 @@
                 <div class="artstation-grid" id="artstationGrid">
                     <div class="loading" data-en="Loading..." data-ru="Загрузка...">Loading...</div>
                 </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages" class="section-card">
+                <h2 class="section-title" data-en="Languages" data-ru="Языки">Languages</h2>
+                <div class="skills-content">
+                    <div class="skills-layout">
+                        <div class="skills-columns languages-columns">
+                            <div class="skills-column">
+                                <div class="skills-category languages-card">
+                                    <h3 class="skills-column-title" data-en="Russian" data-ru="Русский">Russian</h3>
+                                    <div class="skills-list">
+                                        <span data-en="Native" data-ru="Родной">Native</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-column">
+                                <div class="skills-category languages-card">
+                                    <h3 class="skills-column-title" data-en="English" data-ru="Английский">English</h3>
+                                    <div class="skills-list">
+                                        <span data-en="B1 / Intermediate" data-ru="B1 / Средний">B1 / Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section-card">
+                <h2 class="section-title" data-en="Education" data-ru="Образование">Education</h2>
+                <div class="education-content">
+                    <div class="education-line"></div>
+                    <div class="education-item education-item-featured">
+                        <div class="education-dot"></div>
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div>
+                                    <h3 class="education-school" data-en="XYZ School" data-ru="XYZ School">XYZ School</h3>
+                                </div>
+                                <span class="education-meta" data-en="2021" data-ru="2021">2021</span>
+                            </div>
+                            <div class="education-course-block">
+                                <h3 class="education-school education-school-secondary" data-en="Outblock Course - Level Design" data-ru="Курс Outblock - Левел-дизайн">Outblock Course - Level Design</h3>                            </div>
+                            <div class="education-subheader">
+                                <span class="education-subtitle" data-en="Level Design / Game Development" data-ru="Левел-дизайн / Разработка игр">Level Design / Game Development</span>
+                            </div>
+                            <ul class="education-points">
+                                <li data-en="Studied core level design principles, player guidance, and level structure" data-ru="Изучение основ левел-дизайна, навигации игрока и структуры уровней">Studied core level design principles, player guidance, and level structure</li>
+                                <li data-en="Worked with Unity and other tools used in game development workflows" data-ru="Работа с Unity и другими инструментами для разработки игр">Worked with Unity and other tools used in game development workflows</li>
+                                <li data-en="Created practical projects focused on gameplay flow and environment design" data-ru="Создание практических проектов, ориентированных на геймплейный флоу и дизайн окружения">Created practical projects focused on gameplay flow and environment design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-dot"></div>
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div>
+                                    <h3 class="education-school" data-en="Secondary School No. 462" data-ru="Средняя общеобразовательная школа № 462">Secondary School No. 462</h3>
+                                    <span class="education-role" data-en="General Education" data-ru="Общее образование">General Education</span>
+                                </div>
+                                <span class="education-meta" data-en="2016" data-ru="2016">2016</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="certificates" class="section-card">
+                <h2 class="section-title" data-en="Certificates" data-ru="Сертификаты">Certificates</h2>
+                <a class="certificate-link" href="https://drive.google.com/file/d/1TvpS_4IhvuUl7SqVLqabivtyfRWnwK8M/view" target="_blank" rel="noopener" download>
+                    <span class="certificate-icon">PDF</span>
+                    <span class="certificate-text">
+                        <span class="certificate-title" data-en="XYZ School 2021" data-ru="XYZ School 2021">XYZ School 2021</span>
+                        <span class="certificate-subtitle" data-en="Outblock Course Certificate" data-ru="Сертификат курса Outblock">Outblock Course Certificate</span>
+                    </span>
+                </a>
             </section>
 
             <!-- Links Section -->
@@ -312,6 +401,40 @@
                     resumeModal.close();
                 });
             });
+
+            function updateEducationTimeline() {
+                const content = document.querySelector('.education-content');
+                const line = content?.querySelector('.education-line');
+                const items = content ? Array.from(content.querySelectorAll('.education-item')) : [];
+
+                if (!content || !line || items.length < 2) {
+                    return;
+                }
+
+                const contentRect = content.getBoundingClientRect();
+                const dots = items.map(item => {
+                    const dot = item.querySelector('.education-dot');
+                    if (!dot) return null;
+                    const dotRect = dot.getBoundingClientRect();
+                    return dotRect.top - contentRect.top + dotRect.height / 2;
+                }).filter(Boolean);
+
+                if (dots.length < 2) {
+                    return;
+                }
+
+                const firstDot = dots[0];
+                const lastDot = dots[dots.length - 1];
+                const lineTop = Math.round(firstDot);
+                const lineHeight = Math.max(Math.round(lastDot - firstDot), 0);
+
+                line.style.top = `${lineTop}px`;
+                line.style.height = `${lineHeight}px`;
+            }
+
+            window.addEventListener('load', updateEducationTimeline);
+            window.addEventListener('resize', updateEducationTimeline);
+            window.addEventListener('scroll', updateEducationTimeline);
         </script>
 
         <!-- ArtStation Works Loader -->

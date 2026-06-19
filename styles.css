@@ -748,41 +748,68 @@ h4.subsection-title {
 /* ######################################################################### SKILLS ########################
 ################################################### */
 
+.skills-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .skills-layout {
+    width: min(900px, 100%);
     display: flex;
     flex-direction: column;
     gap: 17px;
+    align-items: center;
 }
 
 .skills-specializations {
-    text-align: left;
+    width: 100%;
+    text-align: center;
     padding-bottom: 2px;
 }
 
+.skills-category {
+    width: 100%;
+    padding: 12px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.skills-category-specializations {
+    padding: 12px 14px;
+}
+
 .skills-columns {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 0.25fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .skills-column {
-    text-align: left;
+    text-align: center;
     min-width: 0;
+    display: flex;
+    align-items: stretch;
 }
 
 .skills-column-title {
-    margin: 0 0 17px;
-    color: #ffffff;
-    font-size: 0.88rem;
+    margin: 0 0 8px;
+    color: var(--color-heading-block);
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: center;
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 6px;
 }
 
@@ -792,14 +819,213 @@ h4.subsection-title {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 999px;
-    color: #eef4ff;
-    font-size: 0.78rem;
+    color: var(--color-text-block);
+    font-size: 1rem;
     line-height: 1.2;
     white-space: nowrap;
 }
 
 .skills-list-wide {
     max-width: 100%;
+    justify-content: center;
+}
+
+.languages-columns {
+    width: min(600px, 100%);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+}
+
+.languages-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+}
+
+.languages-card .skills-list {
+    gap: 4px;
+}
+
+.languages-card .skills-list span {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+}
+
+.education-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: visible;
+    padding: 6px 0;
+}
+
+.education-line {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 12px;
+    height: 0;
+    background: var(--color-heading-block);
+    opacity: 0.18;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.education-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    z-index: 1;
+    margin-bottom: 8px;
+}
+
+.education-dot {
+    position: relative;
+    z-index: 3;
+    width: 12px;
+    height: 12px;
+    margin-top: 18px;
+    justify-self: center;
+    background: var(--color-heading-block);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(26, 153, 136, 0.15);
+}
+
+.education-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.education-item-featured .education-card {
+    background: linear-gradient(90deg, rgba(26, 153, 136, 0.08), rgba(255, 255, 255, 0.04));
+}
+
+.education-course-block {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.education-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.education-school {
+    margin: 0;
+    color: var(--color-heading-block);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.education-school-secondary {
+    font-size: 0.98rem;
+}
+
+.education-role,
+.education-subtitle {
+    color: var(--color-text-block);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.education-meta {
+    color: var(--color-text-block);
+    font-size: 0.92rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.education-meta-secondary {
+    font-size: 0.88rem;
+}
+
+.education-subheader {
+    margin-top: 8px;
+}
+
+.education-points {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color: var(--color-text-block);
+}
+
+.education-points li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.certificate-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.certificate-link:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.certificate-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    height: 56px;
+    background: var(--color-heading-block);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.certificate-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.certificate-title {
+    color: var(--color-heading-block);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.certificate-subtitle {
+    color: var(--color-text-block);
+    font-size: 0.9rem;
 }
 
 @media (max-width: 980px) {
@@ -818,9 +1044,20 @@ h4.subsection-title {
 /* ######################################################################### RESUME ########################
 ################################################### */
 
+.work-experience {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .resume-item {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .company-logo {
