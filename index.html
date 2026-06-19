@@ -29,6 +29,27 @@
                 <img class="background-img mask-gradient" src="src/background/Level.png" alt="Background image">
             </div>
 
+            <div class="top-controls">
+                <div class="top-links-row">
+                    <a class="top-link-button" href="https://t.me/Tailsdoll1994" target="_blank" rel="noopener" aria-label="Telegram">
+                        <img src="src/icons/icon-telegram.png" alt="Telegram icon">
+                    </a>
+                    <a class="top-link-button" href="https://github.com/Tailsdoll1994" target="_blank" rel="noopener" aria-label="GitHub">
+                        <img src="src/icons/icon-github.png" alt="GitHub icon">
+                    </a>
+                    <a class="top-link-button" href="https://www.linkedin.com/in/martynov-v/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="src/icons/icon-linkedin.png" alt="LinkedIn icon">
+                    </a>
+                    <a class="top-link-button" href="https://www.artstation.com/martynov_v" target="_blank" rel="noopener" aria-label="Artstation">
+                        <img src="src/icons/icon-artstation.png" alt="Artstation icon">
+                    </a>
+                </div>
+                <div class="top-actions">
+                    <a class="download-resume-btn" href="src/files/resume.pdf" download aria-label="Download Resume" data-en="Download Resume" data-ru="Скачать резюме">Download Resume</a>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">EN</button>
+                </div>
+            </div>
+
             <!-- Avatar Section -->
             <div class="avatar-margin">
                 <div class="avatar-container">
@@ -38,14 +59,14 @@
 
             <!-- Nickname -->
             <div>
-                <h1 class="nick">Vladimir Martynov</h1>
+                <h1 class="nick" data-en="Vladimir Martynov" data-ru="Владимир Мартынов">Vladimir Martynov</h1>
             </div>
 
             
-            <!-- Bio Section -->
+            <!-- About Me Section -->
             <section id="bio" class="section-card">
-                <h2 class="section-title" data-en="Bio" data-ru="Биография">Bio</h2>
-                <p class="text-content" data-en="Here is a brief overview of my background and experience." data-ru="Здесь находится краткий обзор моего опыта и профессиональных навыков.">Here is a brief overview of my background and experience.</p>
+                <h2 class="section-title" data-en="About me" data-ru="Обо мне">About me</h2>
+                <p class="text-content" data-en="Level Designer with 4 years of experience. I specialize in the full cycle of level creation, from grayboxing and gameplay prototyping to final gameplay tuning and implementation of in-game events. I am constantly seeking new opportunities for growth, both professionally and beyond." data-ru="Левел дизайнер с 4-х летним опытом работы. Специализируюсь на полном цикле создания уровней, от Graybox и прототипированием геймплея, до финальной настройки игрового процесса и реализации внутриигровых событий. Постоянно ищу новые точки роста как в профессии, так и за её пределами">Level Designer with 4 years of experience. I specialize in the full cycle of level creation, from grayboxing and gameplay prototyping to final gameplay tuning and implementation of in-game events. I am constantly seeking new opportunities for growth, both professionally and beyond.</p>
             </section>
 
             <!-- Resume Section -->
@@ -125,6 +146,7 @@
                 </div>
             </section>
 
+            <!-- Links Section -->
             <section id="links" class="section-card">
                 <h2 class="section-title" data-en="Links" data-ru="Ссылки">Links</h2>
                 <div class="links-grid">
@@ -132,9 +154,9 @@
                         <img src="src/icons/icon-telegram.png" alt="Telegram icon">
                         <span class="link-text" data-en="Telegram" data-ru="Telegram">Telegram</span>
                     </a>
-                    <a class="link-card" href="https://steamcommunity.com/id/tailsdoll1994/" target="_blank" rel="noopener">
-                        <img src="src/icons/icon-steam.png" alt="Steam icon">
-                        <span class="link-text" data-en="Steam" data-ru="Steam">Steam</span>
+                    <a class="link-card" href="https://github.com/Tailsdoll1994" target="_blank" rel="noopener">
+                        <img src="src/icons/icon-github.png" alt="GitHub icon">
+                        <span class="link-text" data-en="GitHub" data-ru="GitHub">GitHub</span>
                     </a>
                     <a class="link-card" href="https://www.linkedin.com/in/martynov-v/" target="_blank" rel="noopener">
                         <img src="src/icons/icon-linkedin.png" alt="LinkedIn icon">
@@ -146,173 +168,19 @@
                     </a>
                 </div>
             </section>
+        </main>
 
-            <!-- Gaming Section -->
-            <section id="gaming" class="section-card">
-                <h2 class="section-title" data-en="Gaming" data-ru="Игры">Gaming</h2>
-                <div class="gaming-stats">
-                    <!-- Games Owned – ссылка на все игры в профиле Steam -->
-                    <a class="stat-item" href="https://steamcommunity.com/id/tailsdoll1994/games/?tab=all" target="_blank" rel="noopener">
-                        <span data-en="Games Owned" data-ru="Игр в библиотеке">Games Owned</span>
-                        <span>394</span>
-                    </a>
-                    <!-- Wishlist – ссылка на список желаемого -->
-                    <a class="stat-item" href="https://store.steampowered.com/wishlist/id/tailsdoll1994/?sort=dateadded" target="_blank" rel="noopener">
-                        <span data-en="Wishlist" data-ru="Список желаемого">Wishlist</span>
-                        <span>240</span>
-                    </a>
-                </div>
-                <div class="gaming-featured">
-                    <h3 class="subsection-title" data-en="Favorite Games" data-ru="Любимые игры">Favorite Games</h3>
-                    <div class="games-grid">
-                        <a class="game-card" href="https://steamcommunity.com/app/4000" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/2e52d9b905feebfdaaf2db6ad7afece10991d504/capsule_184x69.jpg?t=1776868682" alt="Garry's Mod">
-                            <div class="game-info">
-                                <p class="game-title">Garry's Mod</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/1817230" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/capsule_184x69.jpg?t=1764916407" alt="Hi-Fi RUSH">
-                            <div class="game-info">
-                                <p class="game-title">Hi-Fi RUSH</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/362890" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/362890/626cc060e15a64a2a268b597b9556772ad5ce486/capsule_184x69.jpg?t=1747193649" alt="Black Mesa">
-                            <div class="game-info">
-                                <p class="game-title">Black Mesa</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/524220" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/capsule_184x69.jpg?t=1773364834" alt="NieR:Automata™">
-                            <div class="game-info">
-                                <p class="game-title">NieR:Automata™</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/233610" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233610/capsule_184x69.jpg?t=1688091852" alt="Distance">
-                            <div class="game-info">
-                                <p class="game-title">Distance</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/15370" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15370/capsule_184x69.jpg?t=1692823670" alt="Heroes of Might & Magic V: Tribes of the East">
-                            <div class="game-info">
-                                <p class="game-title">Heroes of Might & Magic V: Tribes of the East</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/1237970" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1237970/capsule_184x69.jpg?t=1777412058" alt="Titanfall® 2">
-                            <div class="game-info">
-                                <p class="game-title">Titanfall® 2</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/514900" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/514900/1d3a6130c422ff499c786403d46443a8e43bd3f2/capsule_184x69.jpg?t=1773839940" alt=">observer_">
-                            <div class="game-info">
-                                <p class="game-title">&gt;observer_</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/570940" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570940/capsule_184x69.jpg?t=1764975651" alt="DARK SOULS™: REMASTERED">
-                            <div class="game-info">
-                                <p class="game-title">DARK SOULS: REMASTERED</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/374320" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/capsule_184x69.jpg?t=1748630784" alt="DARK SOULS™ III">
-                            <div class="game-info">
-                                <p class="game-title">DARK SOULS™ III</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/1091500" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/590e0988a2fb79f44d3e31e41fd4949eb76abc41/capsule_184x69.jpg?t=1769690377" alt="Cyberpunk 2077">
-                            <div class="game-info">
-                                <p class="game-title">Cyberpunk 2077</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/303210" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/303210/capsule_184x69.jpg?t=1765833998" alt="The Beginner's Guide">
-                            <div class="game-info">
-                                <p class="game-title">The Beginner's Guide</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/420530" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/420530/capsule_184x69.jpg?t=1747673318" alt="OneShot">
-                            <div class="game-info">
-                                <p class="game-title">OneShot</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/391540" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/capsule_184x69.jpg?t=1757349115" alt="Undertale">
-                            <div class="game-info">
-                                <p class="game-title">Undertale</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/447530" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/447530/capsule_184x69.jpg?t=1730740610" alt="VA-11 Hall-A: Cyberpunk Bartender Action">
-                            <div class="game-info">
-                                <p class="game-title">VA-11 Hall-A: Cyberpunk Bartender Action</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/493200" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493200/capsule_184x69.jpg?t=1667232008" alt="RiME">
-                            <div class="game-info">
-                                <p class="game-title">RiME</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/427520" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/capsule_184x69.jpg?t=1763986204" alt="Factorio">
-                            <div class="game-info">
-                                <p class="game-title">Factorio</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/413150" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_184x69.jpg?t=1754692865" alt="Stardew Valley">
-                            <div class="game-info">
-                                <p class="game-title">Stardew Valley</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/105600" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435" alt="Terraria">
-                            <div class="game-info">
-                                <p class="game-title">Terraria</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/1167630" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1167630/592fd402f333d5022f47691dbe49d26c9bae0c6c/capsule_184x69.jpg?t=1776678144" alt="Teardown">
-                            <div class="game-info">
-                                <p class="game-title">Teardown</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/1049410" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049410/capsule_184x69.jpg?t=1755294276" alt="Superliminal">
-                            <div class="game-info">
-                                <p class="game-title">Superliminal</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/620" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/capsule_184x69.jpg?t=1745363004" alt="Portal 2">
-                            <div class="game-info">
-                                <p class="game-title">Portal 2</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/219890" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219890/capsule_184x69.jpg?t=1525832559" alt="Antichamber">
-                            <div class="game-info">
-                                <p class="game-title">Antichamber</p>
-                            </div>
-                        </a>
-                        <a class="game-card" href="https://steamcommunity.com/app/813230" target="_blank" rel="noopener">
-                            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813230/capsule_184x69.jpg?t=1776365443" alt="ANIMAL WELL">
-                            <div class="game-info">
-                                <p class="game-title">ANIMAL WELL</p>
-                            </div>
-                        </a>
-                    </div>
+        <dialog id="resumeModal" class="modal">
+            <div class="modal-content resume-modal-content">
+                <button class="modal-close" type="button" aria-label="Close">×</button>
+                <p class="resume-modal-text" data-en="Choose resume language" data-ru="Выберите язык резюме">Choose resume language</p>
+                <div class="resume-modal-actions">
+                    <a class="resume-modal-btn" href="src/files/Vladimir Martynov [Level Designer].pdf" download data-lang="en">English</a>
+                    <a class="resume-modal-btn" href="src/files/Владимир Мартынов [Level Designer].pdf" download data-lang="ru">Русский</a>
                 </div>
             </div>
-        </section>
+        </dialog>
+
         <script>
             particlesJS("particles-js", {
                 particles: {
@@ -350,20 +218,56 @@
 
         </script>
 
-        <!-- Кнопка переключения языка -->
-        <button id="lang-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: #fff; color: #000; border: 1px solid #000; padding: 5px 10px;">RU</button>
-
         <script>
             // Language toggle
             let currentLang = 'en';
-            document.getElementById('lang-toggle').innerText = 'EN';
-            
-            document.getElementById('lang-toggle').addEventListener('click', () => {
-                currentLang = currentLang === 'en' ? 'ru' : 'en';
-                document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
-                    el.innerText = el.getAttribute('data-' + currentLang);
+            const langToggle = document.getElementById('lang-toggle');
+            const downloadResumeBtn = document.querySelector('.download-resume-btn');
+            const resumeModal = document.getElementById('resumeModal');
+            const resumeModalText = resumeModal.querySelector('.resume-modal-text');
+            const resumeModalButtons = resumeModal.querySelectorAll('.resume-modal-btn');
+            const closeResumeModalBtn = resumeModal.querySelector('.modal-close');
+
+            function updateLanguageText() {
+                document.querySelectorAll('[data-en], [data-ru]').forEach(el => {
+                    const translatedText = el.getAttribute('data-' + currentLang);
+                    if (translatedText !== null) {
+                        el.textContent = translatedText;
+                    }
                 });
-                document.getElementById('lang-toggle').innerText = currentLang === 'en' ? 'EN' : 'RU';
+
+                if (downloadResumeBtn) {
+                    downloadResumeBtn.textContent = downloadResumeBtn.getAttribute('data-' + currentLang);
+                }
+
+                if (resumeModalText) {
+                    resumeModalText.textContent = resumeModalText.getAttribute('data-' + currentLang);
+                }
+
+                langToggle.textContent = currentLang === 'en' ? 'EN' : 'RU';
+            }
+
+            langToggle.innerText = 'EN';
+            updateLanguageText();
+            
+            langToggle.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ru' : 'en';
+                updateLanguageText();
+            });
+
+            downloadResumeBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                resumeModal.showModal();
+            });
+
+            closeResumeModalBtn.addEventListener('click', () => {
+                resumeModal.close();
+            });
+
+            resumeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    resumeModal.close();
+                });
             });
         </script>
 

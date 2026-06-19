@@ -127,6 +127,31 @@ a:hover {
     border-radius: var(--border-radius);
 }
 
+.show-gaming-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 16px auto 0;
+    padding: 10px 14px;
+    background: rgba(18, 18, 18, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.show-gaming-btn:hover {
+    transform: translateY(-1px) scale(1.03);
+    background: rgba(28, 28, 28, 0.82);
+    border-color: rgba(128, 170, 238, 0.68);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
 @media (max-width: 800px) {
     .links-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -181,6 +206,43 @@ ul.horizontal-li {
     position: relative;
 }
 
+.resume-modal-content {
+    width: min(420px, 90vw);
+    text-align: center;
+}
+
+.resume-modal-text {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.resume-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.resume-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.resume-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
 .modal-close {
     position: absolute;
     top: 8px;
@@ -216,6 +278,132 @@ img.adaptive-image {
     inset: 0;
     background: linear-gradient(0deg, #000, transparent, transparent);
     opacity: 0.7;
+}
+
+.top-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px 0;
+    margin-top: -2px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.top-links-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.top-link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    background: rgba(18, 18, 18, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-link-button:hover {
+    transform: translateY(-1px) scale(1.03);
+    background: rgba(28, 28, 28, 0.82);
+    border-color: rgba(128, 170, 238, 0.68);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.top-link-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.lang-toggle {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(18, 18, 18, 0.68);
+    color: #ffffff;
+    border-radius: 5px;
+    width: 36px;
+    height: 30px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-toggle:hover,
+.download-resume-btn:hover {
+    transform: translateY(-1px) scale(1.03);
+    background: rgba(28, 28, 28, 0.82);
+    border-color: rgba(128, 170, 238, 0.68);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.download-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    background: rgba(18, 18, 18, 0.68);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (max-width: 640px) {
+    .top-controls {
+        padding: 8px 8px 0;
+    }
+
+    .top-links-row {
+        gap: 5px;
+    }
+
+    .top-link-button {
+        width: 26px;
+        height: 26px;
+        padding: 4px;
+    }
+
+    .top-actions {
+        gap: 6px;
+    }
+
+    .download-resume-btn {
+        font-size: 0.7rem;
+        padding: 0 8px;
+    }
+
+    .lang-toggle {
+        width: 32px;
+        height: 28px;
+        font-size: 0.72rem;
+    }
 }
 
 .background-img {
