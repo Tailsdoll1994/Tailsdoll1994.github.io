@@ -449,6 +449,53 @@
                 return title;
             }
 
+            function extractImageUrl(item) {
+                if (!item) return '';
+
+                const candidates = [
+                    item.thumbnail,
+                    item.enclosure?.link,
+                    item.enclosure?.url,
+                    item.image,
+                    item.content,
+                    item.description,
+                ].filter(Boolean);
+
+                const preferredPatterns = [
+                    /https?:\/\/[^"'\s]+\/p\/assets\/covers\/images\/[^"'\s]+/i,
+                    /https?:\/\/[^"'\s]+\/covers\/images\/[^"'\s]+/i,
+                    /https?:\/\/[^"'\s]+\/p\/assets\/images\/images\/[^"'\s]+/i,
+                    /https?:\/\/[^"'\s]+\/images\/images\/[^"'\s]+/i,
+                ];
+
+                for (const candidate of candidates) {
+                    if (typeof candidate !== 'string') continue;
+
+                    for (const pattern of preferredPatterns) {
+                        const match = candidate.match(pattern);
+                        if (match) {
+                            return match[0];
+                        }
+                    }
+
+                    const imgMatches = [...candidate.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)];
+                    if (imgMatches.length > 0) {
+                        for (const imgMatch of imgMatches) {
+                            const imageUrl = imgMatch[1];
+                            if (/^https?:\/\//i.test(imageUrl) && /\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(imageUrl)) {
+                                return imageUrl;
+                            }
+                        }
+                    }
+
+                    if (/^https?:\/\//i.test(candidate) && /\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(candidate)) {
+                        return candidate;
+                    }
+                }
+
+                return '';
+            }
+
             // ========== НАСТРОЙКА: список нужных работ ==========
             const customWorks = [
                 // Пример (название должно точно совпадать с тем, что в RSS-ленте, включая "by ...")
@@ -457,22 +504,37 @@
                 //     imageUrl: "https://.../картинка.jpg",
                 //     link: "https://www.artstation.com/artwork/..."
                 // },
-
+                {
+                    title: "SWAT | Street [Night] by Vladimir Martynov",
+                    imageUrl: "https://cdna.artstation.com/p/assets/covers/images/100/274/518/smaller_square/vladimir-martynov-vladimir-martynov-level-street-3-8k-25-06-2026-13-39-30.jpg"
+                },
+                {
+                    title: "SWAT | BackStreet [Night] by Vladimir Martynov",
+                    imageUrl: "https://cdna.artstation.com/p/assets/covers/images/100/274/860/smaller_square/vladimir-martynov-vladimir-martynov-level-street-13-b-8k-25-06-2026-13-55-59.jpg?1782384999"
+                },
+                {
+                    title: "SWAT | Metro by Vladimir Martynov",
+                    imageUrl: "https://cdnb.artstation.com/p/assets/covers/images/100/275/015/smaller_square/vladimir-martynov-vladimir-martynov-preview-2.jpg?1782385345"
+                },
+                {
+                    title: "SWAT | Office [Evening] by Vladimir Martynov",
+                    imageUrl: "https://cdna.artstation.com/p/assets/covers/images/100/275/172/smaller_square/vladimir-martynov-vladimir-martynov-level-office-14-8k-25-06-2026-14-08-45.jpg?1782385790"
+                },
+                {
+                    title: "SWAT | Abandoned Office [Evening] by Vladimir Martynov",
+                    imageUrl: "https://cdna.artstation.com/p/assets/covers/images/100/275/286/smaller_square/vladimir-martynov-vladimir-martynov-level-office-18-8k-25-06-2026-14-12-25.jpg?1782385993"
+                },
+                {
+                    title: "SWAT | Armory Office by Vladimir Martynov",
+                    imageUrl: "https://cdna.artstation.com/p/assets/covers/images/100/275/352/smaller_square/vladimir-martynov-vladimir-martynov-preview.jpg?1782386187"
+                },
                 {
                     title: "Asymmetric Multiplayer Level by Vladimir Martynov",
-                    imageUrl: "https://cdnb.artstation.com/p/assets/images/images/065/527/425/large/vladimir-martynov-testtask-teamdeathmatch-4k-27-07-2023-19-44-08.jpg?1690573974",
+                    imageUrl: "",
                 },
                 {
                     title: "Swamp Sawmill (MudRunner Level Design) by Vladimir Martynov",
                     imageUrl: "https://cdna.artstation.com/p/assets/images/images/061/032/284/medium/vladimir-martynov-20230327020432-1.jpg?1679873540"
-                },
-                {
-                    title: "Sonic Blockout (Level Design) by Vladimir Martynov",
-                    imageUrl: "https://cdnb.artstation.com/p/assets/images/images/060/534/287/medium/vladimir-martynov-stage-1-1-4k-14-03-2023-12-46-39.jpg?1678789384"
-                },
-                {
-                    title: "Escape (Level Design) by Vladimir Martynov",
-                    imageUrl: "https://cdnb.artstation.com/p/assets/images/images/039/940/345/medium/vladimir-martynov-combat-level-9-4k-27-07-2021-16-56-24.jpg?1627394241"
                 }
             ];
 
@@ -526,24 +588,22 @@
                     for (const custom of customWorks) {
                         const foundItem = itemsMap.get(custom.title);
                         if (foundItem) {
-                            const imageUrl = custom.imageUrl && custom.imageUrl.trim() !== '' 
-                                ? custom.imageUrl 
-                                : (foundItem.thumbnail || '');
+                            const imageUrl = custom.imageUrl && custom.imageUrl.trim()
+                                ? custom.imageUrl
+                                : extractImageUrl(foundItem) || '';
                             cardsToRender.push({
-                                title: foundItem.title,     // полный заголовок с "by ..."
-                                imageUrl: imageUrl,
+                                title: foundItem.title,
+                                imageUrl,
                                 link: foundItem.link,
                             });
+                        } else if (custom.title && custom.imageUrl && custom.imageUrl.trim()) {
+                            cardsToRender.push({
+                                title: custom.title,
+                                imageUrl: custom.imageUrl,
+                                link: custom.link || '#',
+                            });
                         } else {
-                            if (custom.title && custom.imageUrl) {
-                                cardsToRender.push({
-                                    title: custom.title,
-                                    imageUrl: custom.imageUrl,
-                                    link: custom.link || '#',
-                                });
-                            } else {
-                                console.warn(`Пропущена работа "${custom.title}"`);
-                            }
+                            console.warn(`Пропущена работа "${custom.title}"`);
                         }
                     }
 
