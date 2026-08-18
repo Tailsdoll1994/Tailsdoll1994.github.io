@@ -16,6 +16,7 @@
     --color-heading-block: #1a9988ff;
     --color-category-border-color: rgb(117, 117, 117);
     --color-text-header-spec: rgb(14, 119, 58);
+    --frame-gradient: linear-gradient(90deg, rgba(26, 153, 136, 0.08), rgba(255, 255, 255, 0.04));
 
     --font-family-main: 'Roboto', "Helvetica Neue", Helvetica, Arial;
 
@@ -671,6 +672,27 @@ h4.subsection-title {
     margin: 10px;
     font-weight: 500;
     color: var(--color-text-block);
+    text-align: left;
+}
+
+.aboutme-frame {
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: var(--frame-gradient);
+}
+
+.bio-paragraph + .bio-paragraph {
+    margin-top: 14px;
+}
+
+.responsibility-label {
+    display: inline-block;
+    color: #1a9988ff;
+    font-size: 1.12rem;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-top: 4px;
 }
 
 .link-text {
@@ -771,7 +793,7 @@ h4.subsection-title {
 .skills-category {
     width: 100%;
     padding: 12px 10px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--frame-gradient);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     box-sizing: border-box;
@@ -901,7 +923,7 @@ h4.subsection-title {
 
 .education-card {
     flex: 1;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--frame-gradient);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 14px 16px;
@@ -911,7 +933,7 @@ h4.subsection-title {
 }
 
 .education-item-featured .education-card {
-    background: linear-gradient(90deg, rgba(26, 153, 136, 0.08), rgba(255, 255, 255, 0.04));
+    background: var(--frame-gradient);
 }
 
 .education-course-block {
@@ -984,7 +1006,7 @@ h4.subsection-title {
     align-items: center;
     gap: 14px;
     padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--frame-gradient);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     text-decoration: none;
@@ -1054,7 +1076,7 @@ h4.subsection-title {
     text-align: left;
     margin-bottom: 0;
     padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--frame-gradient);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     box-sizing: border-box;
